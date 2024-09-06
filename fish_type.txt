@@ -1,0 +1,14 @@
+Type 1 : Salmon
+length : 70 ~ 90	(cm)
+weight : 7 ~ 9		(kg)
+
+Type 2 : Tuba
+length : 250 ~ 400 	(cm)
+weight : 250 ~ 700	(kg)
+
+Type 3 : Mullet
+length : 30 ~ 50	(cm)
+weight : 4 ~ 5		(kg)
+
+
+
