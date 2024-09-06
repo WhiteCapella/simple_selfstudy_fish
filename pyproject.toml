@@ -1,0 +1,21 @@
+[project]
+name = "simple_selfstudy_fish"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "elnath1002", email = "elnath1002@naver.com"},
+]
+dependencies = [
+    "scikit-learn>=1.5.1",
+    "pyfiglet>=1.0.2",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[project.scripts]
+ssf = 'ssf.__main__:main'
