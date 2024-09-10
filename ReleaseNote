@@ -4,4 +4,10 @@
 
 ## 0.2 : Add list of Fish type to study
 
-- 0.2.1 : Add function
+## 0.3 : Add Main Functions
+- functionStart()
+- selfstudy()
+- find_dir()
+- save_parquet()
+
+

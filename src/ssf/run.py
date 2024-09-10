@@ -1,5 +1,5 @@
 import os
-import sklearn
+from sklearn.neighbors import KNeighborsClassifier
 import random
 import pandas as pd
 
@@ -56,7 +56,7 @@ def functionStart():
 		weight = input("weight : ")
 		prediction = selfstudy(length = length, weight = weight)
 		while(True):
-			print("""
+			print(f"""
 			입력하신 정보를 토대로 추론한 물고기의 종류는 {prediction}으로 예상됩니다.
 			이 프로그램의 추론이 맞습니까? (yes/no)
 			""")
@@ -123,13 +123,20 @@ def selfstudy(length: float, weight: float):
 	else:
 		# parquet 파일 읽어서 자가학습
 		df = pd.read_parquet(parquetdir)
+		if len(df) < 11:
+			randompredictfish = ["Salmon", "Mullet", "Tuna"]
+			return random.choice(randompredictfish)
+		df['length'] = df['length'].astype(float)
+		df['weight'] = df['weight'].astype(float)
+		df['target'] = df['target'].astype(int)
+
 
 		fishData = df[['length', 'weight']]
 		fishTarget = df['target']
-		kn = KNeighborsClassifier(n_neighbors=10)
+		kn = KNeighborsClassifier()
 		kn.fit(fishData, fishTarget)
 
-		predictData = kn.predict([[length, weight]])
+		predictData = kn.predict([[float(length), float(weight)]])
 		if predictData == 0: 
 			# Mullet / 숭어
 			return "Mullet"
@@ -167,6 +174,7 @@ def save_parquet(recordData):
 		df = pd.DataFrame(recordData)
 		df.to_parquet(wpath)
 	else:
+		df = pd.DataFrame(recordData)
 		e_df = pd.read_parquet(wpath)
 		u_df = pd.concat([e_df, df], ignore_index = True)
 		u_df.to_parquet(wpath)

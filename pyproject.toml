@@ -1,6 +1,6 @@
 [project]
 name = "simple_selfstudy_fish"
-version = "0.2.0"
+version = "0.3.0"
 description = "Default template for PDM package"
 authors = [
     {name = "elnath1002", email = "elnath1002@naver.com"},
