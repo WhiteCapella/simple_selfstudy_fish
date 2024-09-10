@@ -10,4 +10,7 @@
 - find_dir()
 - save_parquet()
 
+## 0.4 : Add Monitor function
+- readParquet()
+- setMonitor()
 
