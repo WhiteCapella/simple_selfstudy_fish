@@ -15,6 +15,7 @@ requires-python = "==3.11.*"
 readme = "README.md"
 license = {text = "MIT"}
 
+[project.urls]
 homepage = "https://github.com/WhiteCapella/simple_selfstudy_fish"
 issue = "https://github.com/WhiteCapella/simple_selfstudy_fish/issues"
 
@@ -23,4 +24,3 @@ issue = "https://github.com/WhiteCapella/simple_selfstudy_fish/issues"
 distribution = false
 
 [project.scripts]
-ssf = 'ssf.__main__:main'
