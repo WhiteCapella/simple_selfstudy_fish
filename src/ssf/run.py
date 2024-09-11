@@ -2,7 +2,7 @@ import os
 from sklearn.neighbors import KNeighborsClassifier
 import random
 import pandas as pd
-from ssf.monitor import getMonitor
+from monitor import getMonitor
 def ping():
     return "pong"
 
@@ -43,6 +43,9 @@ def functionStart():
 
 		Selfstudy Fish Model
 									Version 0.2.0
+
+
+        
 
 
 		물고기의 길이를 입력해 주세요. (단위 : cm)
@@ -111,7 +114,7 @@ def selfstudy(length: float, weight: float):
 		# 임의의 값 반환
 		path = "~/data/fishmodel"
 		rpath = os.path.expanduser(path)
-		os.makedir(rpath)
+		os.makedirs(rpath)
 		randompredictfish = ["Salmon", "Mullet", "Tuna"]
 		return random.choice(randompredictfish)
 		
